@@ -18,9 +18,11 @@ import junit.framework.Assert;
 
 public class Assignment1 extends Base{
 
+	String incidentNum;
 	@Test
 	public void createIncident() throws InterruptedException
 	{
+		
 		initialize("https://dev93872.service-now.com/navpage.do");
 		
 		WebElement f = driver.findElement(By.xpath("//iframe[@id='gsft_main']"));
@@ -34,7 +36,7 @@ public class Assignment1 extends Base{
 		WebElement cframe= driver.findElement(By.xpath("//iframe[@data-original-title='Main Content']"));
 		String parent=driver.getWindowHandle();
 		driver.switchTo().frame(cframe);
-		String incidentNum = driver.findElement(By.xpath("//input[@id='incident.number']")).getAttribute("value");
+		 incidentNum = driver.findElement(By.xpath("//input[@id='incident.number']")).getAttribute("value");
 		System.out.println("Incident num is = "+incidentNum);
 		driver.findElement(By.xpath("//button[@id='lookup.incident.caller_id']")).click();
 		Set<String>whs = driver.getWindowHandles();

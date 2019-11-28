@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="95400" started-at="2019-11-28T18:35:06Z" finished-at="2019-11-28T18:36:41Z">
+  <suite name="Default suite" duration-ms="117456" started-at="2019-11-28T20:01:34Z" finished-at="2019-11-28T20:03:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="95400" started-at="2019-11-28T18:35:06Z" finished-at="2019-11-28T18:36:41Z">
-      <class name="Selenium.Assignment1">
-        <test-method status="PASS" signature="createIncident()[pri:0, instance:Selenium.Assignment1@7823a2f9]" name="createIncident" duration-ms="95334" started-at="2019-11-29T05:35:06Z" finished-at="2019-11-29T05:36:41Z">
+    <test name="Default test" duration-ms="117456" started-at="2019-11-28T20:01:34Z" finished-at="2019-11-28T20:03:31Z">
+      <class name="Selenium.Assignment2">
+        <test-method status="PASS" signature="createIncident()[pri:0, instance:Selenium.Assignment2@4cc0edeb]" name="createIncident" duration-ms="76320" started-at="2019-11-29T07:01:34Z" finished-at="2019-11-29T07:02:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createIncident -->
-      </class> <!-- Selenium.Assignment1 -->
+        <test-method status="PASS" signature="resolveIncident()[pri:0, instance:Selenium.Assignment2@4cc0edeb]" name="resolveIncident" duration-ms="41092" started-at="2019-11-29T07:02:50Z" finished-at="2019-11-29T07:03:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resolveIncident -->
+      </class> <!-- Selenium.Assignment2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
