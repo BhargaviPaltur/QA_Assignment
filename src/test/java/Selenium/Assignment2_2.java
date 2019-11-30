@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import junit.framework.Assert;
 
-public class Assignment2_2 extends Assignment1{
+public class Assignment2_2 extends Base{
 	
 	@Test
 	public void resolveIncident() throws InterruptedException
@@ -25,7 +25,7 @@ public class Assignment2_2 extends Assignment1{
 		driver.findElement(By.xpath("//input[@id='user_name']")).sendKeys("admin");
 		driver.findElement(By.xpath("//input[@id='user_password']")).sendKeys("piCIn2iLD3Kx");
 		driver.findElement(By.xpath("//button[@id='sysverb_login']")).click();
-		//driver.findElement(By.xpath("//input[@id='filter']")).sendKeys("Incidents");
+		
 		WebElement serviceDesk = driver.findElement(By.xpath("//span[text()='Service Desk']"));
 		WebElement incidents = driver.findElement(By.xpath("//div[@data-id='4fed4395c0a8016400fcf06c27b1e6c6']/div[text()='Incidents']"));
 		List<WebElement>wbs = driver.findElements(By.xpath("//ul[@id='concourse_application_tree']"));
@@ -43,9 +43,10 @@ public class Assignment2_2 extends Assignment1{
 		
 
 		WebElement cframe= driver.findElement(By.xpath("//iframe[@data-original-title='Main Content']"));
+	String inci = readPropertiesFile("InciNum");
 		driver.switchTo().frame(cframe);
 		WebElement searchbox = driver.findElement(By.xpath("//span[@id='incident_hide_search']/div/div/input"));
-		searchbox.sendKeys(incidentNum,Keys.ENTER);
+		searchbox.sendKeys(inci,Keys.ENTER);
 		
 		driver.findElement(By.xpath("//a[@class='linked formlink']")).click();
 		

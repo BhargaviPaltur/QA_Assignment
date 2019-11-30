@@ -38,47 +38,58 @@ public class Assignment1 extends Base{
 		driver.switchTo().frame(cframe);
 		 incidentNum = driver.findElement(By.xpath("//input[@id='incident.number']")).getAttribute("value");
 		System.out.println("Incident num is = "+incidentNum);
+		storeIncidentNum(incidentNum);
 		driver.findElement(By.xpath("//button[@id='lookup.incident.caller_id']")).click();
-		Set<String>whs = driver.getWindowHandles();
+		reuseableWindowHandle(parent);
+		/*Set<String>whs = driver.getWindowHandles();
 		for(String w:whs)
 		{
 			if(!parent.equals(w))
 			{
 				driver.switchTo().window(w);
-				driver.findElement(By.xpath("//a[@sys_id='62826bf03710200044e0bfc8bcbe5df1']")).click();
-				driver.switchTo().window(parent);
-				driver.switchTo().frame(cframe);
-			}
-		}
 				
+			}
+		}*/
+		
+		driver.findElement(By.xpath("//a[@sys_id='62826bf03710200044e0bfc8bcbe5df1']")).click();
+		driver.switchTo().window(parent);
+		driver.switchTo().frame(cframe);
 		WebElement categorySelect = driver.findElement(By.xpath("//select[@id='incident.category']"));
-		Select sel=new Select(categorySelect);
-		sel.selectByValue("software");
-		WebElement subCategorySelect = driver.findElement(By.xpath("//select[@id='incident.subcategory']"));		
-		Select sel2=new Select(subCategorySelect);
-		sel2.selectByValue("email");
+		resueableSelect(categorySelect, "software");
+	/*	Select sel=new Select(categorySelect);
+		sel.selectByValue("software");*/
+		WebElement subCategorySelect = driver.findElement(By.xpath("//select[@id='incident.subcategory']"));
+		resueableSelect(subCategorySelect, "email");
+		/*Select sel2=new Select(subCategorySelect);
+		sel2.selectByValue("email");*/
 		driver.findElement(By.xpath("//button[@id='lookup.incident.business_service']")).click();
-		Set<String> whs2= driver.getWindowHandles();
+		reuseableWindowHandle(parent);
+		/*Set<String> whs2= driver.getWindowHandles();
 		for(String w2:whs2)
 		{
 			if(!parent.equals(w2))
 			{
 				driver.switchTo().window(w2);
-				driver.findElement(By.xpath("//div[@class='input-group']/input")).sendKeys("outlook",Keys.ENTER);
-				driver.findElement(By.xpath("(//a[@sys_id='27d35b6fc0a8000b0027ee9ce7c4cc1b'])[1]")).click();
-				driver.switchTo().window(parent);
-				driver.switchTo().frame(cframe);
+				
 			}
-		}
+		}*/
+		
+		driver.findElement(By.xpath("//div[@class='input-group']/input")).sendKeys("outlook",Keys.ENTER);
+		driver.findElement(By.xpath("(//a[@sys_id='27d35b6fc0a8000b0027ee9ce7c4cc1b'])[1]")).click();
+		driver.switchTo().window(parent);
+		driver.switchTo().frame(cframe);
 	WebElement contact= driver.findElement(By.xpath("//select[@id='incident.contact_type']"));
-		Select sel3= new Select(contact);
-		sel3.selectByValue("email");
+	resueableSelect(contact, "email");
+		/*Select sel3= new Select(contact);
+		sel3.selectByValue("email");*/
 	WebElement impact= driver.findElement(By.xpath("//select[@id='incident.impact']"));	
-	   Select sel4= new Select(impact);
-	   sel4.selectByValue("1");
-	   WebElement urgency= driver.findElement(By.xpath("//select[@id='incident.urgency']"));	
-	   Select sel5= new Select(urgency);
-	   sel5.selectByValue("1");	
+	resueableSelect(impact, "1");
+	  /* Select sel4= new Select(impact);
+	   sel4.selectByValue("1");*/
+	   WebElement urgency= driver.findElement(By.xpath("//select[@id='incident.urgency']"));
+	   resueableSelect(urgency, "1");
+	   /*Select sel5= new Select(urgency);
+	   sel5.selectByValue("1");*/	
 	Boolean b = driver.findElement(By.xpath("//select[@id='incident.priority']")).isEnabled();	
 		Assert.assertTrue(b);
 		driver.findElement(By.xpath("//button[@id='lookup.incident.assignment_group']")).click();

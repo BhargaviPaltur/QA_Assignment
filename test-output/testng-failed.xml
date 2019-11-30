@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="QualityArc_Classroom.ResolveIncident">
+      <class name="Selenium.Assignment2_2">
         <methods>
           <include name="resolveIncident"/>
         </methods>
-      </class> <!-- QualityArc_Classroom.ResolveIncident -->
+      </class> <!-- Selenium.Assignment2_2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

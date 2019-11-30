@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="89555" started-at="2019-11-30T01:37:51Z" finished-at="2019-11-30T01:39:20Z">
+  <suite name="Default suite" duration-ms="92150" started-at="2019-11-30T02:30:15Z" finished-at="2019-11-30T02:31:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="89555" started-at="2019-11-30T01:37:51Z" finished-at="2019-11-30T01:39:20Z">
-      <class name="QualityArc_Classroom.ResolveIncident">
-        <test-method status="PASS" signature="resolveIncident()[pri:0, instance:QualityArc_Classroom.ResolveIncident@39aeed2f]" name="resolveIncident" duration-ms="89497" started-at="2019-11-30T12:37:51Z" finished-at="2019-11-30T12:39:20Z">
+    <test name="Default test" duration-ms="92150" started-at="2019-11-30T02:30:15Z" finished-at="2019-11-30T02:31:47Z">
+      <class name="Selenium.Assignment1">
+        <test-method status="PASS" signature="createIncident()[pri:0, instance:Selenium.Assignment1@39aeed2f]" name="createIncident" duration-ms="92096" started-at="2019-11-30T13:30:15Z" finished-at="2019-11-30T13:31:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- resolveIncident -->
-      </class> <!-- QualityArc_Classroom.ResolveIncident -->
+        </test-method> <!-- createIncident -->
+      </class> <!-- Selenium.Assignment1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
